@@ -2,10 +2,10 @@
   "name": "@panflux/interfaces",
   "version": "0.1.0",
   "description": "Common interfaces for Panflux",
-  "main": "index.js",
   "repository": "github:panflux/platform-interfaces",
   "author": "Niels Keurentjes <niels.keurentjes@omines.com>",
   "license": "(MIT AND ODbL-1.0)",
+  "main": "./index.js",
   "devDependencies": {
     "husky": "^4.2.3",
     "js-yaml": "^3.13.1"
@@ -14,5 +14,9 @@
     "hooks": {
       "pre-commit": "bin/convert; git add dist"
     }
-  }
+  },
+  "files": [
+    "index.js",
+    "dist/*"
+  ]
 }
