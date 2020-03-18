@@ -1,0 +1,14 @@
+#!/usr/bin/env node
+const fs = require('fs');
+const path = require('path');
+const yaml =require('js-yaml');
+
+const home = path.resolve(__dirname, '..');
+const dist = path.resolve(home, 'dist');
+
+const data = yaml.safeLoad(fs.readFileSync(`${home}/interfaces.yaml`));
+
+fs.writeFileSync(`${dist}/interfaces.yaml`, yaml.safeDump(data));
+fs.writeFileSync(`${dist}/interfaces.json`, JSON.stringify(data));
+
+console.log('Converted source data to dist versions');

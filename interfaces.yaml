@@ -1,0 +1,32 @@
+media_player:
+    properties:
+        activity: string
+
+    services:
+        next: ~
+        pause: ~
+        play: ~
+
+light:
+    services:
+        toggle: ~
+        turnOn: ~
+        turnOff: ~
+
+dimmable_light:
+    implements: light
+
+    config:
+        brightnessScale:
+            type: number
+            min: 0
+            max: 100
+            default: 100
+            unit: percent
+
+    services:
+        setBrightness:
+            type: number
+            min: 0
+            max: 100
+            unit: percent
